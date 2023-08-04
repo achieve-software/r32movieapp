@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth";
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_apiKey,
+    apiKey: "AIzaSyA7-YiXKa-6ucfxWqCOlUC3TdpUttwexJM",
   authDomain: process.env.REACT_APP_authDomain,
   projectId: process.env.REACT_APP_projectId,
   storageBucket: process.env.REACT_APP_storageBucket,
