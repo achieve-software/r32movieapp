@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import avatar from "../assets/icons/avatar.png";
 import { AuthContext } from "../context/AuthContext";
-const Navbar = () => {  const {currentUser,  } = useContext(AuthContext)
+const Navbar = () => 
+{  const {currentUser,  } = useContext(AuthContext)
 //  const currentUser = { displayName: "Mike Jones" };
   // const currentUser = false;
   return (
