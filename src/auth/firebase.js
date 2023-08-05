@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: "AIzaSyA7-YiXKa-6ucfxWqCOlUC3TdpUttwexJM",
-  authDomain: process.env.REACT_APP_authDomain,
+  authDomain: "movieappalexvctr.firebaseapp.com",
   projectId: process.env.REACT_APP_projectId,
   storageBucket: process.env.REACT_APP_storageBucket,
   messagingSenderId: process.env.REACT_APP_messagingSenderId,
