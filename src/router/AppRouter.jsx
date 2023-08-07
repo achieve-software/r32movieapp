@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Register from "../pages/Register";
 import MovieDetail from "../pages/MovieDetail";
 import PrivateRoute from "./Privateroute";
+ 
 //Routes yerine switch //
 
 
@@ -13,6 +14,8 @@ const AppRouter = () => {
   return (
     <>
       <Navbar />
+      
+
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
