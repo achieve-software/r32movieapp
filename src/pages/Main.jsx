@@ -1,11 +1,44 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import MovieCard from "../components/MovieCard";
 import { MovieContext } from "../context/MovieContext";
+import { useNavigate } from "react-router-dom";
+import { toastWarnNotify } from "../helper/ToastNotify";
+import { AuthContext } from "../context/AuthContext";
+
+const API_KEY = "AIzaSyA7-YiXKa-6ucfxWqCOlUC3TdpUttwexJM";
+const SEARCH_API = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=`;
 const Main = () => {
-  const { movies,loading } = useContext(MovieContext);
+  const { movies,loading,getMovies } = useContext(MovieContext);
+  const { currentUser } = useContext(AuthContext);
+  const [searchTerm, setSearchTerm] = useState("")
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (currentUser && searchTerm) {
+      getMovies(SEARCH_API + searchTerm);
+    } else if (!currentUser) {
+      toastWarnNotify("please log in to search a movie");
+      navigate("/login");
+    } else {
+      toastWarnNotify("please enter a text");
+    }
+  };
+
 
   return (
-    <div>
+    <>
+      <form className="flex justify-center p-2"
+      onSubmit={handleSubmit}>
+        <input
+          type="search"
+          className="w-80 h-8 rounded-md p-1 m-2"
+          placeholder="Search a movie..."
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <button className="btn-danger-bordered" type="submit">
+          Search
+        </button>
+      </form>
       <div className="flex justify-center flex-wrap">
         {loading ? (
           <div
@@ -18,7 +51,7 @@ const Main = () => {
           movies.map((movie) => <MovieCard key={movie.id} {...movie} />)
         )}
       </div>
-    </div>
+    </>
   );
 };
 export default Main;
