@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import Register from "../pages/Register";
 import MovieDetail from "../pages/MovieDetail";
 import PrivateRoute from "./Privateroute";
+import Favorites from "../pages/Favorites";
  
 //Routes yerine switch //
 
@@ -23,6 +24,9 @@ const AppRouter = () => {
         <Route path="/details/:id" element={<PrivateRoute />}>
          <Route path="" element={<MovieDetail />} />
          </Route>
+         <Route path="/favorites" element={<PrivateRoute/>}>
+          <Route path="" element={<Favorites/>} />
+        </Route>
       </Routes>
     </>
   );
