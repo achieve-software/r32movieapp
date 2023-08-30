@@ -1,6 +1,3 @@
-<p>Clarusway<img align="right"
-  src="https://secure.meetupstatic.com/photos/event/3/1/b/9/600_488352729.jpeg"  width="15px"></p>
-
 # Project-009 : Movie App (RP-09)
 
 ## Description
@@ -11,6 +8,10 @@ Project aims to create a Movie App.
 
 - We are adding a new project to our portfolios. So you and your colleagues have started to work on the project.
 
+- - ## Project-gif
+![JavaScript-project](https://github.com/achieve-software/achieve-software/blob/main/img/movie.gif?raw=true)
+## Project-link
+https://playful-cuchufli-213d17.netlify.app/
 ## Project Skeleton
 
 ```
